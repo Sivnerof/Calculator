@@ -11,7 +11,6 @@ const multiply = function(a, b){
 };
 
 const divide = function(dividend, divisor){
-    // return quotient;
     return dividend / divisor;
 };
 
