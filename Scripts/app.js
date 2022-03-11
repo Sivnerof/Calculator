@@ -1,17 +1,49 @@
+const add = function(a, b){
+    return a + b;
+};
+
+const subtract = function(a, b){
+    return a - b;
+};
+
+const multiply = function(a, b){
+    return a * b;
+};
+
+const divide = function(dividend, divisor){
+    // return quotient;
+    return dividend / divisor;
+};
+
+const square = function(num, power){
+    return num ** power;
+};
+
+const operate = function(operator, a, b){
+    switch(operator){
+        case "+":
+            console.log(add(a, b)); 
+            break;
+        case "-":
+            console.log(subtract(a, b)); 
+            break;
+        case "*":
+            console.log(multiply(a, b)); 
+            break;
+        case "/":
+            console.log(divide(a, b)); 
+            break;
+        case "^":
+            console.log(square(a, b)); 
+            break;
+        default: 
+            alert('Error');
+    };
+};
+
+
 /*
     Here are some use cases (abilities your project needs to have):
-
-        Your calculator is going to contain functions for all of the 
-        basic math operators you typically find on simple calculators, 
-        so start by creating functions for the following items and 
-        testing them in your browser’s console.
-            add
-            subtract
-            multiply
-            divide
-        
-        Create a new function operate that takes an operator and 
-        2 numbers and then calls one of the above functions on the numbers.
         
         Create a basic HTML calculator with buttons for each digit, 
         each of the above functions and an “Equals” key.
