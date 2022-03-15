@@ -34,15 +34,10 @@ main {
     background-color: var(--calc-blue);
     width: 25%;
     margin: auto;
-    padding: 15px;
     border-radius: 15px;
     border: 1px solid red;
 }
 
 p {
     border: 1px solid white;
-}
-
-button {
-    border: 1px solid gold;
 }
