@@ -42,15 +42,7 @@ const operate = function(operator, a, b){
 
 
 /*
-    Here are some use cases (abilities your project needs to have):
-        
-        Create a basic HTML calculator with buttons for each digit, 
-        each of the above functions and an “Equals” key.
-            Do not worry about wiring up the JS just yet.
-            There should also be a display for the calculator, 
-            go ahead and fill it with some dummy numbers so you can get it looking right.
-            Add a “clear” button.
-        
+    Here are some use cases (abilities your project needs to have):    
         Create the functions that populate the display when you click the number buttons… 
         you should be storing the ‘display value’ in a variable somewhere for use in the next step.
         
@@ -61,9 +53,9 @@ const operate = function(operator, a, b){
             and then operate() on them when the user presses the “=” key.
             
             You should already have the code that can populate the display, 
-            so once operate() has been called, 
+            so once operate() has been called,
             update the display with the ‘solution’ to the operation.
-            This is the hardest part of the project. 
+            This is the hardest part of the project.
             You need to figure out how to store all the values and call the operate function with them. 
             Don’t feel bad if it takes you a while to figure out the logic.
         
@@ -103,11 +95,5 @@ const operate = function(operator, a, b){
         It is hard to do math on these numbers. 
         (disable the decimal button if there’s already one in the display)
         
-        EXTRA CREDIT: Make it look nice! This is a great project to practice your CSS skills. 
-        At least make the operations a different color from the keypad buttons.
-        
-        EXTRA CREDIT: Add a “backspace” button, so the user can undo if they click the wrong number.
-        
         EXTRA CREDIT: Add keyboard support!
-
 */

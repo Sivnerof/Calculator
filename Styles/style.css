@@ -24,10 +24,46 @@ header {
 
 main {
     background-color: var(--calc-blue);
+    display: flex;
+    flex-direction: column;
     width: 25%;
     height: 500px;
     margin: auto;
     padding: 5px;
     border-radius: 15px;
     border: 5px solid #1F3A4E;
+    box-shadow: 15px 15px 15px lightblue;
+}
+
+main > div {
+    display: flex;
+    padding: 5px;
+    flex: 1;
+}
+
+div > button {
+    flex: 1;
+    background-color: #D9C1A0;
+    cursor: pointer;
+    color: #464646;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+#memory-div, #current-display {
+    background-color: #93A0AA;
+    color: #464646;
+    padding: 10px;
+}
+
+#memory-div {
+    border-radius: 10px 10px 0px 0px;
+}
+
+#current-display {
+    border-radius: 0px 0px 10px 10px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
