@@ -2,6 +2,47 @@
 red-
 green-
 blue-
-calculator-
-bg-
+calculator- #8C98A1
+bg- #FAEBD7
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    --super-mercado: 'Supermercado One', sans-serif; 
+    --bg-creme: #FAEBD7;
+    --calc-blue: #4B6375;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-creme);
+    font-family: var(--super-mercado);
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    color: var(--calc-blue);
+}
+
+main {
+    background-color: var(--calc-blue);
+    width: 25%;
+    margin: auto;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid red;
+}
+
+p {
+    border: 1px solid white;
+}
+
+button {
+    border: 1px solid gold;
+}
