@@ -33,9 +33,11 @@ header {
 main {
     background-color: var(--calc-blue);
     width: 25%;
+    height: 500px;
     margin: auto;
+    padding: 5px;
     border-radius: 15px;
-    border: 1px solid red;
+    border: 5px solid #1F3A4E;
 }
 
 p {
