@@ -1,3 +1,5 @@
+const buttons = document.querySelectorAll('button');
+
 const add = function(a, b){
     return a + b;
 };
@@ -40,6 +42,15 @@ const operate = function(operator, a, b){
     };
 };
 
+const display = function(value){
+    console.log(value);
+};
+
+buttons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        display(e.target.value);
+    });
+});
 
 /*
     Here are some use cases (abilities your project needs to have):    
