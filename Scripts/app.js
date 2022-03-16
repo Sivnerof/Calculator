@@ -43,12 +43,31 @@ const operate = function(operator, a, b){
 };
 
 const display = function(value){
-    console.log(value);
+    const current_display = document.querySelector('#current-display');
+    current_display.innerText += value;
+};
+
+const deleteAll = function(){
+    const current_display = document.querySelector('#current-display');
+    current_display.innerText = '';
+};
+
+const clearLast = function(){
+    const current_display = document.querySelector('#current-display');
+    if (current_display.innerText != ''){
+        current_display.innerText = current_display.innerText.slice(0, -1);
+    };
 };
 
 buttons.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-        display(e.target.value);
+        if (e.target.value === 'DA'){
+            deleteAll();
+        } else if (e.target.value === 'C'){
+            clearLast();
+        } else {
+            display(e.target.value);
+        }
     });
 });
 
