@@ -1,5 +1,6 @@
 const buttons = document.querySelectorAll('button');
 let values = [];
+let memory = '';
 
 const add = function(a, b){
     return a + b;
@@ -24,19 +25,19 @@ const square = function(num, power){
 const operate = function(operator, a, b){
     switch(operator){
         case "+":
-            console.log(add(a, b)); 
+            return add(a, b); 
             break;
         case "-":
-            console.log(subtract(a, b)); 
+            return subtract(a, b); 
             break;
         case "*":
-            console.log(multiply(a, b)); 
+            return multiply(a, b); 
             break;
         case "/":
-            console.log(divide(a, b)); 
+            return divide(a, b); 
             break;
         case "^":
-            console.log(square(a, b)); 
+            return square(a, b); 
             break;
         default: 
             alert('Error');
@@ -44,6 +45,7 @@ const operate = function(operator, a, b){
 };
 
 const display = function(value, elem_class){
+    const mem_display = document.querySelector('#memory-div');
     const operators = ['/', '-', '+', '*', '^'];
     if (elem_class === 'num-button'){
         if (value === '.' && values.includes('.') === true){
@@ -53,19 +55,28 @@ const display = function(value, elem_class){
         }
     } else if (elem_class === 'operator'){
         if(values.some(item => operators.includes(item)) == false){
+            values[0] = values.join('');
+            values.length = 1;
             values.push(value);
+        } else {
+            values[2] = values.splice(2).join('');
+            mem_display.innerText = values.join(''); 
+            values[0] = operate(values[1], +values[0], +values[2]);
+            values[1] = value;
+            values.length = 2;
         }
     }
-    console.log(values);
     const current_display = document.querySelector('#current-display');
     current_display.innerText = values.join('');
 };
 
 const deleteAll = function(){
     const current_display = document.querySelector('#current-display');
+    values.length = 0;
     current_display.innerText = '';
 };
 
+//Fix This
 const clearLast = function(){
     const current_display = document.querySelector('#current-display');
     if (current_display.innerText != ''){
@@ -86,42 +97,6 @@ buttons.forEach((btn) => {
 });
 
 /*
-    Here are some use cases (abilities your project needs to have):    
-        Create the functions that populate the display when you click the number buttons… 
-        you should be storing the ‘display value’ in a variable somewhere for use in the next step.
-        
-        Make the calculator work! 
-            You’ll need to store the first number that is input into 
-            the calculator when a user presses an operator, 
-            and also save which operation has been chosen 
-            and then operate() on them when the user presses the “=” key.
-            
-            You should already have the code that can populate the display, 
-            so once operate() has been called,
-            update the display with the ‘solution’ to the operation.
-            This is the hardest part of the project.
-            You need to figure out how to store all the values and call the operate function with them. 
-            Don’t feel bad if it takes you a while to figure out the logic.
-        
-        Gotchas: watch out for and fix these bugs if they show up in your code:
-            Users should be able to string together several operations and get the right answer, 
-            with each pair of numbers being evaluated at a time. 
-            For example, 12 + 7 - 5 * 3 = should yield 42. 
-            An example of the behavior we’re looking for would be this student solution.
-                https://mrbuddh4.github.io/calculator/
-            
-            Your calculator should not evaluate more than a single pair of numbers at a time. 
-            Example: you press a number button (12), 
-            followed by an operator button (+), 
-            a second number button (7), 
-            and finally a second operator button (-). 
-            Your calculator should then do the following: 
-                first, evaluate the first pair of numbers (12 + 7), 
-                second, display the result of that calculation (19), 
-                and finally, 
-                use that result (19) as the first number in your new calculation, 
-                along with the next operator (-).
-            
             You should round answers with long decimals so that they don’t overflow the screen.
             
             Pressing = before entering all of the numbers or an operator could cause problems!
