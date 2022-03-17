@@ -1,4 +1,5 @@
 const buttons = document.querySelectorAll('button');
+let values = [];
 
 const add = function(a, b){
     return a + b;
@@ -42,9 +43,18 @@ const operate = function(operator, a, b){
     };
 };
 
-const display = function(value){
+const display = function(value, elem_class){
+    const operators = ['/', '-', '+', '*', '^'];
+    if (elem_class === 'num-button'){
+        values.push(value);
+    } else if (elem_class === 'operator'){
+        if(values.some(item => operators.includes(item)) == false){
+            values.push(value);
+        }
+    }
+    console.log(values);
     const current_display = document.querySelector('#current-display');
-    current_display.innerText += value;
+    current_display.innerText = values.join('');
 };
 
 const deleteAll = function(){
@@ -66,8 +76,8 @@ buttons.forEach((btn) => {
         } else if (e.target.value === 'C'){
             clearLast();
         } else {
-            display(e.target.value);
-        }
+            display(e.target.value, e.target.className);
+        };
     });
 });
 
