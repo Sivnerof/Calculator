@@ -62,6 +62,7 @@ const display = function(value, elem_class){
             values[2] = values.splice(2).join('');
             mem_display.innerText = values.join(''); 
             values[0] = operate(values[1], +values[0], +values[2]);
+            mem_display.innerText += '=' + values[0];
             values[1] = value;
             values.length = 2;
         }
