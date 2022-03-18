@@ -76,11 +76,11 @@ const deleteAll = function(){
     current_display.innerText = '';
 };
 
-//Fix This
 const clearLast = function(){
     const current_display = document.querySelector('#current-display');
     if (current_display.innerText != ''){
-        current_display.innerText = current_display.innerText.slice(0, -1);
+        values.pop();
+        current_display.innerText = values.join('');
     };
 };
 
@@ -95,12 +95,3 @@ buttons.forEach((btn) => {
         };
     });
 });
-
-/*
-            You should round answers with long decimals so that they don’t overflow the screen.
-            
-            Pressing = before entering all of the numbers or an operator could cause problems!
-            
-            Display a snarky error message if the user tries to divide by 0… 
-            don’t let it crash your calculator!
-*/
